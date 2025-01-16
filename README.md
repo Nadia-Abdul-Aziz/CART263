@@ -1,2 +1,2 @@
 # CART263
-CART263 Class Repository
+This is my class repository for CART263!!
