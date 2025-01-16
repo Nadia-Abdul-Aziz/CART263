@@ -36,8 +36,10 @@ function draw() {
 function drawRectangles() {
 
     rect(rect1X, rect1Y, size);
-
+    push();
+    fill(mouseX, mouseY, 0);
     rect(rect2X, rect2Y, size);
+    pop();
 
     rect(rect3X, rect3Y, size);
 
@@ -51,7 +53,7 @@ function mouseClicked() {
 
 function keyPressed() {
 
-    if (keyCode === ENTER) {
+    if (keyCode === 32) {
         rect3X -= 50;
     }
 }
@@ -63,6 +65,7 @@ function moveRect2() {
     if (rect2Y >= height) {
         rect2Y = 0
     }
+
 }
 
 
