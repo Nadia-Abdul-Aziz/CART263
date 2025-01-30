@@ -1,10 +1,13 @@
 window.onload = setup;
+console.log("we are a go!")
 
 /** function setup */
 function setup() {
     console.log("we are a go!")
     /*** ALL ANWSERS TO BE ADDED IN THE ALLOCATED SPACE */
     /*** START PART ONE ACCESS */
+
+
     /* 1: all paragraph elements */
     /***CODE
     //console.log(document.querySelectorAll("p"));
@@ -12,9 +15,9 @@ function setup() {
      * Listing all the paragraphs
      * NodeList(9) [p#1, p#2.img-descript, p#3.img-descript, p#4.img-descript, p#5.img-descript, p#6.img-descript, p#7.img-descript, p#8.img-descript, p#9.img-descript]
      */
-
-
     /*************************************** */
+
+
     /* 2: only the first paragraph element */
     /***CODE */
     // console.log(document.getElementById("1"));
@@ -26,23 +29,22 @@ function setup() {
                 quasi officia sit veniam!
             </p>
      */
-
-
     /*************************************** */
+
+
     /* 3: all elements with the class inner-container */
     /***CODE */
     //console.log(document.getElementsByClassName("inner-container"));
     /***OUTPUT:
      * HTMLCollection(8) [div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container]
      */
-
-
     /*************************************** */
+
+
     /* 4: the last image element inside the element that has the class img-container */
     /***CODE Part 1 */
     // console.log(document.getElementsByClassName("img-container").length);
     //Outputted a length of 8
-    /***CODE Part 2 */
     //console.log(document.getElementsByClassName("img-container")[7]);
     //One less than the length because it starts at 0
     /***OUTPUT:
@@ -50,15 +52,14 @@ function setup() {
                         <img class="img-image" src="task-1-images/seventeen.png">
          </div>
      */
-
-
     /*************************************** */
+
+
     /* 5A: all h2 elements */
     /* 5B: length of the list in 5A */
     /* 5C: the text content of the first element in the list from 5A */
     /***CODE */
     //console.log(document.getElementsByTagName("h2"));
-    // Why doesn't document.querySelectorAll work??? it worked for p???
     //console.log(document.getElementsByTagName("h2").length);
     //There's only one?? Checked html to confirm
     //outputs the number of items - 1
@@ -67,9 +68,9 @@ function setup() {
     /***FINAL OUTPUT:
      *  The header of this fancy page
      */
-
-
     /*************************************** */
+
+
     /* 6: the element with id name parent */
     /***CODE */
     //console.log(document.getElementById("parent"));
@@ -187,9 +188,14 @@ function setup() {
             
         </section>
      */
-
     /*************************************** */
     /*** END PART ONE ACCESS */
+
+
+
+
+
+
 
 
     /*************************************** */
@@ -213,7 +219,7 @@ function setup() {
     /*************************************** */
     /* 3: Change the src element of the first image element on the page to be ...
     /***CODE */
-    console.log(document.getElementsByClassName("img-image").length);
+    // console.log(document.getElementsByClassName("img-image").length);
     document.getElementsByClassName("img-image")[0].src = "task-1-images/seven.png"
 
     /*************************************** */
@@ -249,18 +255,25 @@ function setup() {
     let colors = ['red', 'blue', 'green', 'orange'];
     let innerContainers = document.getElementsByClassName("inner-container");
 
+    //Stops once it's done
     // for (let i = 0; i < 3; i++) {
     //     innerContainers[i].style.background = colors[i];
     // }
 
     //if i want it to repeat after it's done
+    // % is a fancy new thing for remainders after division I discovered.
     for (let i = 0; i < innerContainers.length; i++) {
         innerContainers[i].style.background = colors[i % colors.length];
     }
-
-
     /*************************************** */
     /*** END PART TWO MODIFY */
+
+
+
+
+
+
+
 
 
     /*************************************** */
@@ -277,81 +290,135 @@ function setup() {
     /* 1H: Iterate through the allPTagsThree array and call customCreateElement(), 
     passing the current allPTagsThree element as the parent with each iteration.*/
     /***CODE */
-    //console.log("Script is running");
-    // THE CODE WON'T RUN?????
-    let allPTagsThree = document.getElementsByTagName("p")
+    console.log("Plz run...gimme a sign if you're running");
+    let allPTagsThree = document.querySelectorAll("p")
+    for (let i = 0; i < allPTagsThree.length; i++) {
+        customCreateElement(allPTagsThree[i]);
+    }
     function customCreateElement(parent) {
         let newP = document.createElement("p");
-        newP.textContent = "using create Element";
+        newP.innerHTML = "using create Element";
         newP.style.backgroundColor = "green";
         newP.style.color = "white";
         parent.appendChild(newP)
     }
-    for (let i = 0; i < allPTagsThree.length; i++) {
-        customCreateElement(allPTagsThree[i]);
-    }
-
     /***EXPLANATION::
-     * 
-     * 
+     * Kept running consoles because I spent way too much time on this
+     * Getting all the "p" elements and assigning them into the variable
+     * Using the loop to increment the amound of elements made as long as it is less than the amount of existing paragraphs
+     * calling the function to create with allPTagsThree iterating through.
+     * function to create the actual element, calling the new element newP
+     * inner html = the content
+     * background color = self explanatory
+     * color = text color
+     * Attaching the new elements to the parent
      */
-
     /*************************************** */
+
+
+
+
+
     /* 2: GRID OF BOXES */
-    /* 2A: Create another new function: function customNewBoxCreate(parent){ //body }*/
-    /* 2B: In the body of customNewBoxCreate create a new div element, that has the class testDiv. 
-    /* 2C:Then append this new element to the parent variable within the function. 
-    /* 2D:Finally, return</code> this new element */
+    /* 2A: Create another new function: function customNewBoxCreate(parent){ //body } DONE*/
+    /* 2B: In the body of customNewBoxCreate create a new div element, that has the class testDiv. DONE
+    /* 2C:Then append this new element to the parent variable within the function. DONE
+    /* 2D:Finally, return</code> this new element  DONE*/
     /* 2E:Create a nested for loop (for rows and columns) to iterate through 10 columns and 10 rows (just like the JS Review :)). 
-        Call the customNewBoxCreate function, in order to generate a new div -> representing each cell in the grid. 
-        Ensure that the parent element for each of these new divs is the element whose id is named `new-grid`*/
+        Call the customNewBoxCreate function, in order to generate a new div -> representing each cell in the grid. DONE
+        Ensure that the parent element for each of these new divs is the element whose id is named `new-grid`DONE */
     /* 2F: You will see at this point that the x,y position of the resulting divs makes no sense... 
+        uhhhhhhhhhhhhhhh idk what i'm doing at this point....
         Fix this by doing the following: every time you call customNewBoxCreate() - save the current returned element 
-        in a variable i.e. returnedDiv. 
+        in a variable i.e. returnedDiv. DONE
         Set the style (left and top) to the of this element to 
         the necessary x and y position (use the counter variables in the for nested for loop to 
-        calculate the new positions.
+        calculate the new positions. DONE
     /* 2G: BONUS I: Make every div in the resulting grid in an even numbered row have white background 
         and otherwise let it have a background of purple.</li>
     /* 2H: BONUS II: For every div in an even numbered row make it contain the text `EVEN`, 
         otherwise lat it have the content `ODD`.*/
 
     /***CODE */
+    function customNewBoxCreate(parent) {
+        let newDiv = document.createElement("div");
+        newDiv.classList.add("testDiv");
+        parent.appendChild(newDiv);
+        return newDiv;
+    }
 
-
+    for (let row = 0; row < 10; row++) {
+        for (let col = 0; col < 10; col++) {
+            let returnedDiv = customNewBoxCreate(document.getElementById("new-grid"));
+            returnedDiv.style.top = `${row * 70}px`;
+            returnedDiv.style.left = `${col * 70}px`;
+        }
+    }
     /***EXPLANATION::
-     * 
-     * 
+     * Did not do the bonus content due to time constraints
+     * function to create the new div
+     * adding class (testdiv)
+     * attaching the new div as a child to the parent
+     * sending it back to be used later
+     * loop that runs 10 times exactly (both rows and columns)
+     * storing the returned div, funcion to create the boxes from earlier into the new grid id to be displayed
+     * setting positions manually, 70 pixels apart from the top and left sides
+     * $ and the syntax is a fancy thing to combine the calculation with px i discovered that the examples online did...idk how it works to be honest...???
      */
 
     /*************************************** */
-    /* 3: GRID OF BOXES II */
 
-    /* 3A: Create ANOTHER nested for loop - in order to generate a new grid ... 
+
+
+
+
+    /* 3: GRID OF BOXES II */
+    /* 3A: Create ANOTHER nested for loop - in order to generate a new grid ... DONE
         USE the same customNewBoxCreate function..., the only difference is that the parent element 
-        for each of these new divs is the element whose id is `new-grid-three`. */
+        for each of these new divs is the element whose id is `new-grid-three`. DONE */
     /* 3B: Then: write the code to check when a column is a multiple of 3 (no remainder), 
-        when it is a column where the remainder is 1 or when the remainder is 2 ... 
+        when it is a column where the remainder is 1 or when the remainder is 2 ... DONE...I think
         HINT:: look up the % operator.. */
     /* 3C: Then for each of the above cases: give the new divs in the first case a background of red, 
-            then the second a background of orange and the third yellow. */
+            then the second a background of orange and the third yellow. DONE*/
     /*  3D: Finally, let each div contain the text content representing the associated remainder 
-        when dividing by three. */
+        when dividing by three. DONE*/
 
     /***CODE */
+    for (let row = 0; row < 10; row++) {
+        for (let col = 0; col < 10; col++) {
+            let returnedDivAgain = customNewBoxCreate(document.getElementById("new-grid-three"));
+            //copied and pasted from the top section, changed variable name
+            returnedDivAgain.style.top = `${row * 70}px`;
+            returnedDivAgain.style.left = `${col * 70}px`;
 
+            if (col % 3 === 0) {
+                returnedDivAgain.style.background = "red"
+                returnedDivAgain.textContent = "0"
+            }
+
+            if (col % 3 === 1) {
+                returnedDivAgain.style.background = "orange"
+                returnedDivAgain.textContent = "1"
+            }
+
+            if (col % 3 === 2) {
+                returnedDivAgain.style.background = "yellow"
+                returnedDivAgain.textContent = "2"
+            }
+
+        }
+    }
 
     /***EXPLANATION::
-     * 
-     * 
+     * Outer loop since i didn't explain in the last one = loops while less than 10, starts at 0, adds 1 each time
+     * Inner is the same thing for columns that is dependant on the outer
+     * same styling as the last one
+     * If col divided by 3 has remainder 0 = do the styling (the color and the text)
+     * The other two are the same but with remainders of 1 and 2
+     * I used the modulo thing in a previous example, remainder
      */
-
     /*************************************** */
     /*** END PART THREE CREATE */
     /*************************************** */
-
-
-
-
-
 }
