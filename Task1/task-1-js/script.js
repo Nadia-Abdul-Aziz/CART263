@@ -199,7 +199,7 @@ function setup() {
     /***CODE */
     console.log(document.getElementsByTagName("p"));
     //this will change the first one by default
-    document.querySelector("p").textContent = "New text in paragraph one: text changed by Nadia on the following date: 29/01/2025";
+    //document.querySelector("p").textContent = "New text in paragraph one: text changed by Nadia on the following date: 29/01/2025";
     //this one specifically targets the first one
     document.getElementsByTagName("p")[0].textContent = "New text in paragraph one: text changed by Nadia on the following date: 29/01/2025";
     /*************************************** */
@@ -220,29 +220,44 @@ function setup() {
     /* 4: Select the third paragraph element on the page and 
     replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
     /***CODE */
-    // document.getElementsByTagName("p")[2].innerHTML = "<h2>TEST 123</h2>";
+    document.getElementsByTagName("p")[2].innerHTML = "<h2>TEST 123</h2>";
 
 
     /*************************************** */
     /* 5: Select the fourth paragraph element on the page and 
     add to the existing content an h2 element containing the text `TEST 123`
     /***CODE */
-    document.getElementsByTagName("p")[2].innerHTML += "<h2>TEST 123</h2>";
+    document.getElementsByTagName("p")[3].innerHTML += "<h2>TEST 123</h2>";
 
     /*************************************** */
     /* 6: Select the fifth paragraph element on the page and add to the existing content 
     an img element that holds `one.png`, and add the class newStyle to said paragraph element.
     /***CODE */
+    document.getElementsByTagName("p")[4].innerHTML += '<img src="task-1-images/one.png">';
+    document.getElementsByTagName("p")[4].classList.add("newStyle");
 
 
     /*************************************** */
-    /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];, 
+    /* 7: Add the following array variable: let colors = ['red','blue','green','orange'];,
     then access all elements with class name inner-container and save to a variable called `innerContainers`. 
     Next, iterate over the colors array, and for each color: 
     assign the element from innerContainers variable with the same index 
     (i.e. colors[0] should be allocated to the first innerContainers element, colors[1] to the second, etc ...) 
     a background using that color.
     /***CODE */
+    //The array, copied and pasted
+    let colors = ['red', 'blue', 'green', 'orange'];
+    let innerContainers = document.getElementsByClassName("inner-container");
+
+    // for (let i = 0; i < 3; i++) {
+    //     innerContainers[i].style.background = colors[i];
+    // }
+
+    //if i want it to repeat after it's done
+    for (let i = 0; i < innerContainers.length; i++) {
+        innerContainers[i].style.background = colors[i % colors.length];
+    }
+
 
     /*************************************** */
     /*** END PART TWO MODIFY */
@@ -262,7 +277,19 @@ function setup() {
     /* 1H: Iterate through the allPTagsThree array and call customCreateElement(), 
     passing the current allPTagsThree element as the parent with each iteration.*/
     /***CODE */
-
+    //console.log("Script is running");
+    // THE CODE WON'T RUN?????
+    let allPTagsThree = document.getElementsByTagName("p")
+    function customCreateElement(parent) {
+        let newP = document.createElement("p");
+        newP.textContent = "using create Element";
+        newP.style.backgroundColor = "green";
+        newP.style.color = "white";
+        parent.appendChild(newP)
+    }
+    for (let i = 0; i < allPTagsThree.length; i++) {
+        customCreateElement(allPTagsThree[i]);
+    }
 
     /***EXPLANATION::
      * 
