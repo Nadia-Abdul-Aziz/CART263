@@ -7,16 +7,11 @@ function setup() {
     /*** START PART ONE ACCESS */
     /* 1: all paragraph elements */
     /***CODE
-     * Option 1
-    */
     //console.log(document.querySelectorAll("p"));
     /***OUTPUT:
      * Listing all the paragraphs
      * NodeList(9) [p#1, p#2.img-descript, p#3.img-descript, p#4.img-descript, p#5.img-descript, p#6.img-descript, p#7.img-descript, p#8.img-descript, p#9.img-descript]
      */
-    /***CODE
-    * Option 2
-   */
 
 
     /*************************************** */
@@ -36,20 +31,24 @@ function setup() {
     /*************************************** */
     /* 3: all elements with the class inner-container */
     /***CODE */
-    // console.log(document.getElementsByClassName("inner-container"));
-    /***OUTPUT: 
-     * 
+    //console.log(document.getElementsByClassName("inner-container"));
+    /***OUTPUT:
+     * HTMLCollection(8) [div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container, div.inner-container]
      */
 
 
     /*************************************** */
     /* 4: the last image element inside the element that has the class img-container */
     /***CODE Part 1 */
-    console.log(document.getElementsByClassName("img-container").length);
+    // console.log(document.getElementsByClassName("img-container").length);
+    //Outputted a length of 8
     /***CODE Part 2 */
-    console.log(document.getElementsByClassName("img-container")[8]);
-    /***OUTPUT: 
-     * 
+    //console.log(document.getElementsByClassName("img-container")[7]);
+    //One less than the length because it starts at 0
+    /***OUTPUT:
+     * <div class="img-container">
+                        <img class="img-image" src="task-1-images/seventeen.png">
+         </div>
      */
 
 
@@ -58,16 +57,135 @@ function setup() {
     /* 5B: length of the list in 5A */
     /* 5C: the text content of the first element in the list from 5A */
     /***CODE */
-    /***OUTPUT: 
-     * 
+    //console.log(document.getElementsByTagName("h2"));
+    // Why doesn't document.querySelectorAll work??? it worked for p???
+    //console.log(document.getElementsByTagName("h2").length);
+    //There's only one?? Checked html to confirm
+    //outputs the number of items - 1
+    //console.log(document.getElementsByTagName("h2")[0].textContent);
+    //Not putting .textContent will show the text still, but with the tag.
+    /***FINAL OUTPUT:
+     *  The header of this fancy page
      */
 
 
     /*************************************** */
     /* 6: the element with id name parent */
     /***CODE */
-    /***OUTPUT: 
-     * 
+    //console.log(document.getElementById("parent"));
+    //Getting everything under parent
+    /***OUTPUT:
+     * <section id="parent">
+            <div class="inner-container">
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-1-images/sixteen.png">
+                    </div>
+                    <p id="2" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            <div class="inner-container">
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-1-images/eight.png">
+                    </div>
+                    <p id="3" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            <div class="inner-container">
+
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-1-images/eleven.png">
+                    </div>
+                    <p id="4" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            <div class="inner-container">
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-1-images/fifteen.png">
+                    </div>
+                    <p id="5" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            <div class="inner-container">
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-1-images/five.png">
+                    </div>
+                    <p id="6" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            
+            <div class="inner-container">
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-1-images/three.png">
+                    </div>
+                    <p id="7" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            
+            <div class="inner-container">
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-1-images/twelve.png">
+                    </div>
+                    <p id="8" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            
+            <div class="inner-container">
+                <div class="content-container">
+                    <div class="img-container">
+                        <img class="img-image" src="task-1-images/seventeen.png">
+                    </div>
+                    <p id="9" class="img-descript">Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
+                        perspiciatis blanditiis, et
+                        laborum praesentium earum. Enim facere, quia commodi voluptate, quis asperiores, pariatur
+                        ducimus officiis non
+                        quasi officia sit veniam!</p>
+
+                </div>
+            </div>
+            
+        </section>
      */
 
     /*************************************** */
@@ -79,24 +197,37 @@ function setup() {
     /*************************************** */
     /* 1: Select the first paragraph and replace the text within the paragraph... */
     /***CODE */
+    console.log(document.getElementsByTagName("p"));
+    //this will change the first one by default
+    document.querySelector("p").textContent = "New text in paragraph one: text changed by Nadia on the following date: 29/01/2025";
+    //this one specifically targets the first one
+    document.getElementsByTagName("p")[0].textContent = "New text in paragraph one: text changed by Nadia on the following date: 29/01/2025";
     /*************************************** */
     /* 2: Select all elements in the HTML that have the class name content-container
      and change the background color ... of first and second ...*/
     /***CODE */
+    document.getElementsByClassName("content-container")[0].style.background = "orange";
+    document.getElementsByClassName("content-container")[1].style.background = "purple";
+    //Attempted to use slice, found out I can't use array methods like that...
 
     /*************************************** */
     /* 3: Change the src element of the first image element on the page to be ...
     /***CODE */
+    console.log(document.getElementsByClassName("img-image").length);
+    document.getElementsByClassName("img-image")[0].src = "task-1-images/seven.png"
 
     /*************************************** */
     /* 4: Select the third paragraph element on the page and 
     replace the content (within the paragraph) to be an h2 element which contains the text `TEST 123`
     /***CODE */
+    // document.getElementsByTagName("p")[2].innerHTML = "<h2>TEST 123</h2>";
+
 
     /*************************************** */
     /* 5: Select the fourth paragraph element on the page and 
     add to the existing content an h2 element containing the text `TEST 123`
     /***CODE */
+    document.getElementsByTagName("p")[2].innerHTML += "<h2>TEST 123</h2>";
 
     /*************************************** */
     /* 6: Select the fifth paragraph element on the page and add to the existing content 
